@@ -1,4 +1,9 @@
-import urequests, http1
-response = urequests.get("<website_url>")
-print(response) # response.<whatever> (eg, response.text, or response.json())
-response.close()
+import urequests, connect
+
+def send(x):
+    response = urequests.get("url/" + str(x))
+    response.close()
+
+def recieve():
+    response = urequests.get('url')
+    return response.text # or response.json(), etc.)
